@@ -43,6 +43,6 @@ fun PantallaMenuPreview(){
     PantallaMenu(
         onBoton1Click = {},
         onBoton2Click = {},
-        onBoton3Click = {}
+        onBoton3Click = {})
 
 }

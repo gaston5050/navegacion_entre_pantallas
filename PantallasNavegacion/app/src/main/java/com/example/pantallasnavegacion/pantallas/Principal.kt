@@ -25,16 +25,17 @@ fun NavegacionConEnum() {
 
         // --- MENÚ PRINCIPAL ---
         composable(route = Screen.Menu.ruta) {
-            Menu(
+            PantallaMenu(
                 // Al navegar, pasamos la ruta definida en el enum
                 onBoton1Click = { navController.navigate(Screen.Pan1.ruta) },
                 onBoton2Click = { navController.navigate(Screen.Pan2.ruta) },
                 onBoton3Click = { navController.navigate(Screen.Pan3.ruta) }
             )
         }
-        composable(route = Screen.Pan1.ruta) {
-            PantallaDestino()
-        }
+        composable(route = Screen.Pan1.ruta) { pantalla1() }
+        composable(route = Screen.Pan2.ruta) {  pantalla2()}
+        composable(route = Screen.Pan3.ruta) {  pantalla3()}
 
 
+    }
 }
