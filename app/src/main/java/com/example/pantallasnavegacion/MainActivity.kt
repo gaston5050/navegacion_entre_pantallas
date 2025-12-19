@@ -21,8 +21,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PantallasNavegacionTheme {
-                    botonera()
-                  //  NavegacionConEnum()
+                botonera(
+                    onBoton1Click = { },
+                    onBoton2Click = { },
+                    onBoton3Click = { }
+                )
+                //  NavegacionConEnum()
 
             }
         }

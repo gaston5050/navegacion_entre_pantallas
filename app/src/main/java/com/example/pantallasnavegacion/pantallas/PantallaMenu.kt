@@ -27,6 +27,8 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.ui.res.painterResource
+import com.example.pantallasnavegacion.R
 
 @Composable
 fun PantallaMenu(
@@ -58,25 +60,42 @@ fun PantallaMenu(
 
 
 @Composable
-fun botonera() {
+fun botonera(
+    onBoton1Click: () -> Unit,
+    onBoton2Click: () -> Unit,
+    onBoton3Click: () -> Unit
+) {
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Top app bar")}
+            topBar = {
 
-                    )},
-            ){
-        innerPadding ->
-        Column(
-            modifier = Modifier
-                .padding(innerPadding)
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("Contenido de la pantalla principal")
-        }
+                @OptIn(ExperimentalMaterial3Api::class)
+                TopAppBar(
+                    title = { Text( "holaaaaaaa")},
+
+                    actions = {
+                        IconButton(onClick = {onBoton1Click }) {
+                            Icon(painter = painterResource(R.drawable.uno), contentDescription = "Localized description")
+                        }
+                        IconButton(onClick = { onBoton1Click}) {
+                            Icon(painter = painterResource(R.drawable.dos), contentDescription = "Localized description")
+                        }
+                        IconButton(onClick = { onBoton1Click }) {
+                            Icon(painter = painterResource(R.drawable.outline_timer_3_24), contentDescription = "Localized description")
+                        }
+
+
+
+                    }
+               )}
+    ){innerPadding ->
+        Text(
+            modifier = Modifier.padding(innerPadding),
+            text = "Example of a scaffold with a bottom app bar."
+        )
+
     }
+
+
     }
 
 
@@ -90,10 +109,13 @@ fun botonera() {
 
 @Preview(showBackground = true)
 @Composable
-fun PantallaMenuPreview(){
+fun PantallaMenuPreview(onBoton1Click: () -> Unit,
+    onBoton2Click: () -> Unit,
+    onBoton3Click: () -> Unit){}
+    /* {
     PantallaMenu(
         onBoton1Click = {},
         onBoton2Click = {},
-        onBoton3Click = {})
+        onBoton3Click = {})*/
 
 }
