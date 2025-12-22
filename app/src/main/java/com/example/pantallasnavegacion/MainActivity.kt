@@ -21,12 +21,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PantallasNavegacionTheme {
-                botonera(
-                    onBoton1Click = { },
-                    onBoton2Click = { },
-                    onBoton3Click = { }
-                )
-                //  NavegacionConEnum()
+
+                NavegacionConEnum()
 
             }
         }
@@ -44,6 +40,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    botonera()
+ //  botonera()
 
 }

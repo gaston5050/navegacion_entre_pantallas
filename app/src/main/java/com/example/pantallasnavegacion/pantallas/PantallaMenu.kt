@@ -28,94 +28,45 @@ import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.ui.res.painterResource
+import androidx.navigation.NavController
 import com.example.pantallasnavegacion.R
 
-@Composable
-fun PantallaMenu(
-    onBoton1Click: () -> Unit,
-    onBoton2Click: () -> Unit,
-    onBoton3Click: () -> Unit
-) {
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-
-        Text(text = "Elige una opción:", modifier = Modifier.padding(bottom = 32.dp))
-
-        Button(onClick = onBoton1Click, modifier = Modifier.padding(8.dp)) {
-            Text("Ir a Pantalla 1")
-        }
-        Button(onClick = onBoton2Click, modifier = Modifier.padding(8.dp)) {
-            Text("Ir a Pantalla 2")
-        }
-        Button(onClick = onBoton3Click, modifier = Modifier.padding(8.dp)) {
-            Text("Ir a Pantalla 3")
-        }
-    }
-}
 
 
 @Composable
 fun botonera(
-    onBoton1Click: () -> Unit,
-    onBoton2Click: () -> Unit,
-    onBoton3Click: () -> Unit
+    onNavigateToPan1: () -> Unit,
+    onNavigateToPan2: () -> Unit,
+    onNavigateToPan3: () -> Unit
 ) {
-    Scaffold(
-            topBar = {
 
-                @OptIn(ExperimentalMaterial3Api::class)
+    @OptIn(ExperimentalMaterial3Api::class)
                 TopAppBar(
                     title = { Text( "holaaaaaaa")},
 
+
                     actions = {
-                        IconButton(onClick = {onBoton1Click }) {
-                            Icon(painter = painterResource(R.drawable.uno), contentDescription = "Localized description")
+                        IconButton(onClick = onNavigateToPan1) {
+                            Icon(
+                                painter = painterResource(R.drawable.uno),
+                                contentDescription = "Localized description"
+                            )
                         }
-                        IconButton(onClick = { onBoton1Click}) {
-                            Icon(painter = painterResource(R.drawable.dos), contentDescription = "Localized description")
+                        IconButton(onClick = onNavigateToPan2) {
+                            Icon(
+                                painter = painterResource(R.drawable.dos),
+                                contentDescription = "Localized description"
+                            )
                         }
-                        IconButton(onClick = { onBoton1Click }) {
-                            Icon(painter = painterResource(R.drawable.outline_timer_3_24), contentDescription = "Localized description")
+                        IconButton(onClick = onNavigateToPan3) {
+                            Icon(
+                                painter = painterResource(R.drawable.outline_timer_3_24),
+                                contentDescription = "Localized description"
+                            )
                         }
 
 
+                    })
 
                     }
-               )}
-    ){innerPadding ->
-        Text(
-            modifier = Modifier.padding(innerPadding),
-            text = "Example of a scaffold with a bottom app bar."
-        )
-
-    }
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun PantallaMenuPreview(onBoton1Click: () -> Unit,
-    onBoton2Click: () -> Unit,
-    onBoton3Click: () -> Unit){}
-    /* {
-    PantallaMenu(
-        onBoton1Click = {},
-        onBoton2Click = {},
-        onBoton3Click = {})*/
-
-}
